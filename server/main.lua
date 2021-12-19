@@ -218,10 +218,10 @@ ESX.RegisterServerCallback('esx_lssdjob:getVehicleInfos', function(source, cb, p
 			local xPlayer = ESX.GetPlayerFromIdentifier(result[1].owner)
 
 			-- is the owner online?
-			if xPlayer then
+			--[[ if xPlayer then
 				retrivedInfo.owner = xPlayer.getName()
 				cb(retrivedInfo)
-			else
+			else ]]
 				MySQL.Async.fetchAll('SELECT name, firstname, lastname FROM users WHERE identifier = @identifier',  {
 					['@identifier'] = result[1].owner
 				}, function(result2)
@@ -237,7 +237,7 @@ ESX.RegisterServerCallback('esx_lssdjob:getVehicleInfos', function(source, cb, p
 						cb(retrivedInfo)
 					end
 				end)
-			end
+			--[[ end ]]
 		else
 			cb(retrivedInfo)
 		end
