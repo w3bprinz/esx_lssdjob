@@ -278,9 +278,9 @@ function OpenLSSDActionsMenu()
 				{label = 'Custom Rechnung', value = 'cc_customCC'}
 			}
 
-			-- if Config.EnableLicenses then
-			-- 	table.insert(elements, {label = _U('license_check'), value = 'license'})
-			-- end
+			--[[ if Config.EnableLicenses then
+			 	table.insert(elements, {label = _U('license_check'), value = 'license'})
+			end ]]
 
 			ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'citizen_interaction', {
 				title    = _U('citizen_interaction'),
@@ -296,7 +296,7 @@ function OpenLSSDActionsMenu()
 					elseif action == 'show_id' then
 						TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(closestPlayer), 'lspd')
 					elseif action == 'license' then
-						TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(closestPlayer), GetPlayerServerId(PlayerId()), 'drive')
+						TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(closestPlayer), GetPlayerServerId(PlayerId()), 'driver')
 					elseif action == 'weaponlic' then
 						TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(closestPlayer), GetPlayerServerId(PlayerId()), 'weapon')
 					elseif action == 'search' then
